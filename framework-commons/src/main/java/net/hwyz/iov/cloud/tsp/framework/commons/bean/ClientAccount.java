@@ -4,13 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
- * 用户账号基本信息
+ * 客户端用户账号基本信息
  *
  * @author hwyz_leo
  */
 @Data
 @AllArgsConstructor
-public class Account {
+public class ClientAccount {
+
+    /**
+     * 客户端ID
+     */
+    private String clientId;
 
     /**
      * 用户唯一ID
