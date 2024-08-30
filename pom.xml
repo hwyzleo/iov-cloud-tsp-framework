@@ -15,8 +15,8 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <modules>
-        <module>framework-commons</module>
+        <module>framework-commons-starter</module>
+        <module>framework-mysql-starter</module>
     </modules>
-
 
 </project>
