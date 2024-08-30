@@ -4,7 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import net.hwyz.iov.cloud.tsp.framework.commons.bean.ClientAccount;
 
 /**
- * 参数服务类
+ * 参数辅助类
  *
  * @author hwyz_leo
  */

@@ -45,4 +45,14 @@ public abstract class BaseDo<ID> {
         }
     }
 
+    /**
+     * 状态已持久化
+     *
+     * @param id ID
+     */
+    public void statePersistent(ID id) {
+        this.id = id;
+        state = DoState.UNCHANGED;
+    }
+
 }

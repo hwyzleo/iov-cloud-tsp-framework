@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+net.hwyz.iov.cloud.tsp.framework.commons.autoconfigure.CommonsAutoConfiguration
