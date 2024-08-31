@@ -14,9 +14,14 @@
     <artifactId>framework</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <properties>
+        <framework-commons.version>0.0.1-SNAPSHOT</framework-commons.version>
+    </properties>
+
     <modules>
         <module>framework-commons-starter</module>
         <module>framework-mysql-starter</module>
+        <module>framework-exception-starter</module>
     </modules>
 
 </project>
