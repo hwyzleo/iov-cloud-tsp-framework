@@ -37,6 +37,11 @@ public class BaseException extends RuntimeException {
      * 默认错误码
      */
     private static final int ERROR_CODE = 100000;
+    /**
+     * 错误码：入参无效
+     */
+    public static final int INPUT_PARAM_INVALID = 100001;
+
 
     public BaseException(String message) {
         super(message);
