@@ -22,6 +22,8 @@
         <module>framework-commons-starter</module>
         <module>framework-mysql-starter</module>
         <module>framework-exception-starter</module>
+        <module>framework-redis-starter</module>
+        <module>framework-kafka-starter</module>
     </modules>
 
 </project>
