@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-
 /**
  * 基础异常
  *
@@ -31,7 +29,7 @@ public class BaseException extends RuntimeException {
     /**
      * 发生时间
      */
-    private Date timestamp;
+    private Long ts;
 
     /**
      * 默认错误码
@@ -47,14 +45,21 @@ public class BaseException extends RuntimeException {
         super(message);
         this.code = ERROR_CODE;
         this.message = message;
-        this.timestamp = new Date();
+        this.ts = System.currentTimeMillis();
+    }
+
+    public BaseException(int code) {
+        super(String.valueOf(code));
+        this.code = code;
+        this.message = null;
+        this.ts = System.currentTimeMillis();
     }
 
     public BaseException(int code, String message) {
         super(message);
         this.code = code;
         this.message = message;
-        this.timestamp = new Date();
+        this.ts = System.currentTimeMillis();
     }
 
     public String getApp() {
