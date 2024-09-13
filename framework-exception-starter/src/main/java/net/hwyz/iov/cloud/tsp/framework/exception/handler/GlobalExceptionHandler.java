@@ -35,7 +35,9 @@ public class GlobalExceptionHandler {
     public Object serviceException(HttpServletResponse response, Throwable ex) {
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         BaseException exception = (BaseException) ex;
-        exception.setMessage(message.get(exception.getCode()));
+        if (message != null && message.containsKey(exception.getCode())) {
+            exception.setMessage(message.get(exception.getCode()));
+        }
         // TODO 设置APP
         return exception;
     }
