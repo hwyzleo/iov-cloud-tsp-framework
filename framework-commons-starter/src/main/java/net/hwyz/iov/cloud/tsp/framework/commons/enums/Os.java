@@ -1,5 +1,7 @@
 package net.hwyz.iov.cloud.tsp.framework.commons.enums;
 
+import java.util.Arrays;
+
 /**
  * 操作系统枚举类
  *
@@ -12,6 +14,15 @@ public enum Os {
     /** 苹果 **/
     IOS,
     /** 鸿蒙 **/
-    HARMONYOS;
+    HARMONYOS,
+    /** 其他 **/
+    OTHER;
+
+    public static Os valOf(String osStr) {
+        return Arrays.stream(Os.values())
+                .filter(os -> os.name().equals(osStr))
+                .findFirst()
+                .orElse(OTHER);
+    }
 
 }

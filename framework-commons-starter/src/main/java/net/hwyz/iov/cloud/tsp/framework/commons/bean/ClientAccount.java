@@ -22,6 +22,6 @@ public class ClientAccount implements Serializable {
     /**
      * 用户唯一ID
      */
-    private String uid;
+    private String accountId;
 
 }

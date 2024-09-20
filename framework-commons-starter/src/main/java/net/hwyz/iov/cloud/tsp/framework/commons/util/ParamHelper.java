@@ -20,7 +20,7 @@ public class ParamHelper {
         if (clientAccount == null) {
             return null;
         }
-        return StrUtil.emptyIfNull(clientAccount.getClientId()) + ":" + StrUtil.emptyIfNull(clientAccount.getUid());
+        return StrUtil.emptyIfNull(clientAccount.getClientId()) + ":" + StrUtil.emptyIfNull(clientAccount.getAccountId());
     }
 
 }
