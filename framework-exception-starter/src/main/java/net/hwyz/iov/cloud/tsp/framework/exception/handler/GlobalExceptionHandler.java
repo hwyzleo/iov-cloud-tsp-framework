@@ -7,6 +7,7 @@ import net.hwyz.iov.cloud.tsp.framework.commons.exception.InputParamInvalidExcep
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MissingRequestHeaderException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,6 +46,15 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ExceptionHandler({IllegalArgumentException.class})
     public Object illegalArgumentException(HttpServletResponse response, Throwable ex) {
+        response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+        InputParamInvalidException exception = new InputParamInvalidException(ex.getMessage());
+        // TODO 设置APP
+        return exception;
+    }
+
+    @ResponseBody
+    @ExceptionHandler({MissingRequestHeaderException.class})
+    public Object missingRequestHeaderExceptionException(HttpServletResponse response, Throwable ex) {
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         InputParamInvalidException exception = new InputParamInvalidException(ex.getMessage());
         // TODO 设置APP
