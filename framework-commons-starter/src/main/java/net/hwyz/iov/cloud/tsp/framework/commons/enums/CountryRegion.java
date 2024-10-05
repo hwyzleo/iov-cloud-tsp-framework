@@ -34,7 +34,7 @@ public enum CountryRegion {
         return Arrays.stream(CountryRegion.values())
                 .filter(countryRegion -> countryRegion.code.equals(code))
                 .findFirst()
-                .orElse(null);
+                .orElse(CHINESE_MAINLAND);
     }
 
 }
