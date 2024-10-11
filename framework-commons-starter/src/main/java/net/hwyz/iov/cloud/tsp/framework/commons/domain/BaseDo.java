@@ -46,6 +46,13 @@ public abstract class BaseDo<ID> {
     }
 
     /**
+     * 状态删除
+     */
+    protected void stateDelete() {
+        state = DoState.DELETED;
+    }
+
+    /**
      * 状态已持久化
      *
      * @param id ID
