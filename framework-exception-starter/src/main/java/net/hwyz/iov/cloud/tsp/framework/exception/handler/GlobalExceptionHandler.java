@@ -1,5 +1,6 @@
 package net.hwyz.iov.cloud.tsp.framework.exception.handler;
 
+import feign.FeignException;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import net.hwyz.iov.cloud.tsp.framework.commons.exception.BaseException;
@@ -57,6 +58,15 @@ public class GlobalExceptionHandler {
     public Object missingRequestHeaderExceptionException(HttpServletResponse response, Throwable ex) {
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         InputParamInvalidException exception = new InputParamInvalidException(ex.getMessage());
+        // TODO 设置APP
+        return exception;
+    }
+
+    @ResponseBody
+    @ExceptionHandler({FeignException.class})
+    public Object feignExceptionException(HttpServletResponse response, Throwable ex) {
+        response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+        BaseException exception = new BaseException(ex.getMessage());
         // TODO 设置APP
         return exception;
     }
